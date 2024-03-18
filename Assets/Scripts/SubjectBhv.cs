@@ -8,9 +8,10 @@ public class SubjectBhv : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+        transform.position = Subject.position;
+
     }
-    
+
     // Update is called once per frame
     void Update () {
         transform.position = Subject.position;

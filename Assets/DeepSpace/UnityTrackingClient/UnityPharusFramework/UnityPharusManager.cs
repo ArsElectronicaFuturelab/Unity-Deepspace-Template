@@ -166,7 +166,6 @@ namespace UnityPharus
 		}
 
 		public Dictionary<int, Subject> Subjects = new Dictionary<int, Subject>();
-		public GameObject SubjectPrefab;
 		
 		public bool Simulate = false;
 
@@ -418,8 +417,8 @@ namespace UnityPharus
                 yield break;
             }
             m_eventProcessor = new UnityPharusEventProcessor(m_listener);
-			m_eventProcessor.TrackUpdated += TrackUpdEvtDbg;
-			m_eventProcessor.TrackRemoved += TrackRemEvtDbg;
+			//m_eventProcessor.TrackUpdated += TrackUpdEvtDbg;
+			//m_eventProcessor.TrackRemoved += TrackRemEvtDbg;
             
             if (OnTrackingInitialized != null)
             {
@@ -521,19 +520,19 @@ namespace UnityPharus
 			
 
 
-			foreach (KeyValuePair<int, Subject> kv in Subjects)
-			{
+			//foreach (KeyValuePair<int, Subject> kv in Subjects)
+			//{
 
-				GameObject go = GameObject.Find("subx" + kv.Key);
-				if (go == null)
-				{
-					go = Instantiate(SubjectPrefab);
-					go.name = "subx" + kv.Key;
-				}
+			//	GameObject go = GameObject.Find("subx" + kv.Key);
+			//	if (go == null)
+			//	{
+			//		go = Instantiate(SubjectPrefab);
+			//		go.name = "subx" + kv.Key;
+			//	}
 
-				go.GetComponent<SubjectBhv>().Subject = kv.Value;
+			//	go.GetComponent<SubjectBhv>().Subject = kv.Value;
 
-			}
+			//}
         }
 
         private IEnumerator ReconnectListenerDelayed(float theDelay)
