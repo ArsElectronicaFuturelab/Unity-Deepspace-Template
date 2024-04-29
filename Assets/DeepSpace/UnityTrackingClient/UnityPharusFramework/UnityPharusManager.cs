@@ -425,11 +425,23 @@ namespace UnityPharus
                 OnTrackingInitialized(this, new EventArgs());
             }
 
-            Screen.SetResolution(m_pharusSettings.TargetScreenWidth, m_pharusSettings.TargetScreenHeight, true);
+            Screen.SetResolution(m_pharusSettings.TargetScreenWidth, m_pharusSettings.TargetScreenHeight, false);
 
 			TrackingAdapter.InjectTrackingManager (m_instance);
 
             UpdateDebugGUI();
+
+			if (m_unityPharusXMLConfig == null)
+			{
+				m_unityPharusXMLConfig = new();
+				m_unityPharusXMLConfig.ConfigNodes = new UnityPharusXMLConfig.ConfigNode[1];
+				m_unityPharusXMLConfig.ConfigNodes[0] = new();
+				m_unityPharusXMLConfig.ConfigNodes[0].Name = "enabled";
+				m_unityPharusXMLConfig.ConfigNodes[0].Value = "1";
+
+
+				m_unityPharusXMLConfig.Save(Application.dataPath + "/../trackLinkConfig.xml");
+			}
         }
 
 		private void SimulateUpdate()

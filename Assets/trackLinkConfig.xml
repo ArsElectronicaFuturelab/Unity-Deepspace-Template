@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<UnityPharusConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ConfigNodes>
+    <ConfigNode name="enabled">
+      <Value>1</Value>
+    </ConfigNode>
+    <ConfigNode name="targetResolutionX">
+      <Value>3100</Value>
+    </ConfigNode>
+    <ConfigNode name="targetResolutionY">
+      <Value>700</Value>
+    </ConfigNode>
+  </ConfigNodes>
+</UnityPharusConfig>
