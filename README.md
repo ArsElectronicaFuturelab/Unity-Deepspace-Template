@@ -1,6 +1,6 @@
 # Media Spaces - Unity Sample
 
-- Unity Version: 2023.3.14f1
+- Unity Version: 2023.2.19f1
 
 This is a sample integrating Pharus tracking in a Unity application for Deep Space.
 
